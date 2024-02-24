@@ -1,0 +1,15 @@
+{
+  "name": "sample-code",
+  "version": "1.0.0",
+  "description": "Sample node js project for learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Tarun K",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
