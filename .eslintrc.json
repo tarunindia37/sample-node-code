@@ -12,5 +12,8 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "quotes": ["error", "single"],
+    "import/extensions": "off"
+  }
 }
