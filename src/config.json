@@ -1,0 +1,6 @@
+{
+    "FILE_WRITE_EVENT": "fileWritten",
+    "FILE_ERROR_EVENT": "fileError",
+    "DEMO_FILE_PATH": "logs/demo.txt",
+    "LOG_FILE_PATH": "logs/user-logs.txt"
+}

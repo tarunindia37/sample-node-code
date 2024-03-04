@@ -1,25 +1,26 @@
 import fs from 'fs';
 import fileEmitter from './FileEventEmitter.js';
+import config from './config.json' assert { type: 'json' };
 
 export const writeFileOptSync = (data) => {
-  const result = fs.writeFileSync('logs/demo.txt', data);
+  const result = fs.writeFileSync(config.DEMO_FILE_PATH, data);
   if (result) {
-    fileEmitter.emit('fileError');
+    fileEmitter.emit(config.FILE_ERROR_EVENT);
   }
-  fileEmitter.emit('fileWritten');
+  fileEmitter.emit(config.FILE_WRITE_EVENT);
 };
 
 export const readFileOptSync = () => {
-  const data = fs.readFileSync('logs/demo.txt', 'utf-8');
+  const data = fs.readFileSync(config.DEMO_FILE_PATH, 'utf-8');
   return data;
 };
 
 export const writeFileOpt = (data) => {
-  fs.writeFile('logs/user-logs.txt', data, (error) => {
+  fs.writeFile(config.LOG_FILE_PATH, data, (error) => {
     if (error) {
-      fileEmitter.emit('fileError');
+      fileEmitter.emit(config.FILE_ERROR_EVENT);
     } else {
-      fileEmitter.emit('fileWritten');
+      fileEmitter.emit(config.FILE_WRITE_EVENT);
     }
   });
 };
